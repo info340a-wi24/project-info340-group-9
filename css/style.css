@@ -5,11 +5,21 @@ at least two (2) rules that change at least three (3) different properties total
 
 */
 
+h1, h2, h3, h4, h5, h6 {
+    padding-left: 10px; /* Added heading padding */
+    padding-right: 10px;
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px; /* Added some padding around body */
+    padding-right: 10px;
+    background-color: #f5f5f5; /* Changed the body's background color to very light gray */
 }
 
 p {
     color: #333; /* Change font color to a darker shade of gray */
     font-size: 18px; /* Increase font size for paragraphs */
+    padding-left: 10px; /* Added some padding around paragraphs */
+    padding-right: 10px;
 }
