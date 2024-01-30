@@ -1,0 +1,47 @@
+/*
+
+at least two (2) rules that change at least three (3) different properties total
+^^^that's according to the rubric
+
+*/
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 10px; /* Added some padding around body */
+    padding-right: 10px;
+    background-color: #d8bdbd; /* Changed the body's background color to very light gray */
+}
+
+body > header {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkgoldenrod;
+}
+
+footer {
+    padding-top: 10px;
+}
+
+h2 {
+    padding: 10px;
+    background-color: rgb(55, 15, 55);
+    color: lavender;
+}
+
+p {
+    color: #333; /* Change font color to a darker shade of gray */
+    font-size: 16px; /* Increase font size for paragraphs */
+    padding-left: 10px; /* Added some padding around paragraphs */
+    padding-right: 10px;
+}
+
+#abby {
+    display: block;
+    margin: 10px;
+    font-style: italic;
+    color: rgba(138, 100, 2, 0.695);
+}
+
+a {
+    color: darkgoldenrod;
+}
+
