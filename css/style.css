@@ -49,6 +49,16 @@ h1 a {
     color: darkgoldenrod;
 }
 
+.feedback-form {
+    margin-bottom: 20px;
+}
+.feedback-form textarea {
+    background-color: lavender;
+}
+.feedback-form input {
+    display: block;
+}
+
 footer {
     padding-top: 50px;
 }
