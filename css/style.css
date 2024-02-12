@@ -1,13 +1,87 @@
-/*
-at least two (2) rules that change at least three (3) different properties total
-^^^that's according to the rubric
-*/
-
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
 }
 
-p {
-    color: #333; /* Change font color to a darker shade of gray */
-    font-size: 18px; /* Increase font size for paragraphs */
+body {
+    background-color: #d8bdbd;
+}
+
+nav {
+    background: rgb(55, 15, 55);
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+h1 a {
+    color: lavender;
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
+.nav-links {
+    padding-bottom: 15px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: lavender;
+}
+
+.nav-links a:hover {
+    color: darkgoldenrod;
+}
+
+.feedback-form {
+    margin-bottom: 20px;
+}
+.feedback-form textarea {
+    background-color: lavender;
+}
+.feedback-form input {
+    display: block;
+}
+
+footer {
+    padding-top: 50px;
+}
+
+@media (min-width: 768px)
+{
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h1 {
+        letter-spacing: 2px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        padding: 0;
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px)
+{
+
 }
