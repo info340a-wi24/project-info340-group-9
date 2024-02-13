@@ -49,12 +49,78 @@ h1 a {
     color: darkgoldenrod;
 }
 
+/* Icon color */
+.nav-links i {
+    color: white;
+}
+
+.nav-links i:hover {
+    color: darkgoldenrod;
+}
+
+.bookmark-dropdown {
+    position: relative;
+}
+
+.bookmark-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    right: 0;
+}
+
+.bookmark-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Links inside the dropdown */
+.bookmark-dropdown .dropdown-content a {
+    margin-top: 10px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.bookmark-dropdown .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add box shadow */
+    z-index: 1;
+    right: 0; /* Align dropdown content to the right */
+}
+
+/* Dropdown Content Links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Adjust the top margin to align with the bookmark icon */
+.bookmark-dropdown .dropdown-content {
+    margin-top: 20px;
+}
+
 .feedback-form {
     margin-bottom: 20px;
 }
+
 .feedback-form textarea {
     background-color: lavender;
 }
+
 .feedback-form input {
     display: block;
 }
@@ -63,8 +129,7 @@ footer {
     padding-top: 50px;
 }
 
-@media (min-width: 768px)
-{
+@media (min-width: 768px) {
     nav {
         display: flex;
         justify-content: space-between;
@@ -81,7 +146,6 @@ footer {
     }
 }
 
-@media (min-width: 992px)
-{
+@media (min-width: 992px) {
 
 }
