@@ -58,8 +58,11 @@ h1 a {
     color: darkgoldenrod;
 }
 
+/* bookmark css from https://www.w3schools.com/howto/howto_css_dropdown.asp */
+
 .bookmark-dropdown {
     position: relative;
+    display: inline-block;
 }
 
 .bookmark-dropdown .dropdown-content {
@@ -75,11 +78,16 @@ h1 a {
 
 .bookmark-dropdown:hover .dropdown-content {
     display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add box shadow */
+    z-index: 1;
+    right: 0; /* Align dropdown content to the right */
+    display: block;
 }
 
-/* Links inside the dropdown */
-.bookmark-dropdown .dropdown-content a {
-    margin-top: 10px;
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -88,29 +96,24 @@ h1 a {
 
 .bookmark-dropdown .dropdown-content a:hover {
     background-color: #ddd;
+    padding-bottom: 200px;
+    position: absolute;
 }
 
 /* Dropdown Content */
 .dropdown-content {
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add box shadow */
-    z-index: 1;
-    right: 0; /* Align dropdown content to the right */
-}
-
-/* Dropdown Content Links */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+    
 }
 
 /* Adjust the top margin to align with the bookmark icon */
 .bookmark-dropdown .dropdown-content {
     margin-top: 20px;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 300px;
 }
 
 .feedback-form {
@@ -144,8 +147,16 @@ footer {
         padding: 0;
         width: 50%;
     }
+
+    img {
+        max-height: 100px;
+    }
+
 }
 
 @media (min-width: 992px) {
 
+    img {
+        max-height: 100px;
+    }
 }
