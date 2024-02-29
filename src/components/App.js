@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Nav } from './Nav';
 import { Home } from './Home';
-import { PreviewsPage } from './PreviewsPage';
+import { Topic } from './Topic';
 import { Article } from './Article';
 
 function App() {
@@ -15,10 +15,17 @@ function App() {
       <main className="container">
         <div className="">
           <Routes>
+
+            {/* Needs code - Will welcome users and show previews of the topics */}
             <Route path="home" element={<Home />} />
-            <Route path=":topic" element={<PreviewsPage topics={['commuters', 'new-students', 'greek-life']}/>}>
+
+            {/* Shows the topic and previews of articles under that topic */}
+            <Route path=":topic" element={<Topic topics={['commuters', 'new-students', 'greek-life']}/>}>
+
+              {/* Needs code - Will show the subtopic article */}
               <Route path=":topic/:subtopic" element={<Article />}/>
             </Route>
+
           </Routes>
         </div>
       </main>
