@@ -1,20 +1,26 @@
 [
     {
-        "subtopic": "parking",
-        "topic": "commuters",
-        "title": "Parking",
-        "text": "<p>This is the tentative text for parking. Imagine this already a long paragraph.</p>"
+            "subtopic": "parking",
+            "topic": "commuters",
+            "title": "Parking",
+            "text": "<p>Have classes near Red Square? (Kane, Meany, Mary Gates, etc.) The nearest parking garage is Central Plaza Garage. Here you can pay via the PayByPhone app or Cash at the gatehouse. The hours are Weekdays, 4 - 9 p.m., Saturday, 7 a.m. - noon. With rates of $4 an hour or $19.50 daily. There are several parking levels and signs on each wall that direct you to the nearest building. Have classes near the engineering buildings? (Lowe, Mechanical Engineering Building, More, etc.) The nearest parking garage is Padelford Garage. Here you pay via the PayByPhone app or pay station. With rates of $4 an hour or $19.50 daily. Have classes near Denny Hall or Paccar? The nearest parking lot is N05. This parking is for permit holders but is available via PayByPhone after 4pm. Looking for additional parking? Here’s a link to UW Seattle’s campus lots. https://transportation.uw.edu/maps/lots-garages</p>"
     },
 
     {
-        "subtopic": "napping spots",
+        "subtopic": "napping-spots",
         "topic": "commuters",
         "title": "Places to Nap",
-        "text": "<p>This is the tentative text for napping spots</p>"
+        "text": "<p>Have a big gap in between classes and want to catch a snooze? The bean bags at LSAMP in Mary Gates Hall 311 and the Ethnic Cultural Center’s wellness room on the 3rd floor are the places for you.</p>"
     },
 
-    {
-        "subtopic": "overview",
+   {    "subtopic": "napping-spots",
+        "topic": "commuters",
+        "title": "Places to Study",
+        "text": "<p>Trying to find a place where you can get work done while you wait for your next class? Odegaard library, Suzzalo and Allen libraries, LSAMP, Mary Gates Hall, the HUB Commuter Center, and By George Cafe are the perfect places to. Make reservation for Odegaard and Suzzallo study rooms here: https://cal.lib.uw.edu/reserve/suzzallo-group-study, https://cal.lib.uw.edu/spaces?lid=1454 </p>"
+
+    },
+
+    {   "subtopic": "overview",
         "topic": "greek-life",
         "title": "Overview",
         "text": "<p>With around 4,700 fraternity and sorority members, the UW Greek system has a considerable presence on campus. Whether you’re thinking about rushing or just want more information about the traditional, academic, and multicultural Greek organizations at UW, we hope you find our guide helpful. As a note, this resource will not focus on individual houses or house traditions, but rather on campus and organization-wide resources available to all students.</p>"
