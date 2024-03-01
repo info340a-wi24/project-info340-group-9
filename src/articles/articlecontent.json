@@ -11,5 +11,68 @@
         "topic": "commuters",
         "title": "Places to Nap",
         "text": "<p>This is the tentative text for napping spots</p>"
+    },
+
+    {
+        "subtopic": "overview",
+        "topic": "greek-life",
+        "title": "Overview",
+        "text": "<p>With around 4,700 fraternity and sorority members, the UW Greek system has a considerable presence on campus. Whether you’re thinking about rushing or just want more information about the traditional, academic, and multicultural Greek organizations at UW, we hope you find our guide helpful. As a note, this resource will not focus on individual houses or house traditions, but rather on campus and organization-wide resources available to all students.</p>"
+    },
+
+    {
+        "subtopic": "greek-pride",
+        "topic": "greek-life",
+        "title": "Greek Pride",
+        "text": "<p>Greek Pride is an RSO (Registered Student Organization) dedicated to creating a social space for queer fraternity and sorority members. Greek Pride meets weekly and emphasizes service as well as social events. Greek Pride’s volunteer activities center around local homelessness and they often volunteer at Seattle shelters and food banks. Information: https://uwifc.com/greekpride and https://www.instagram.com/greekprideuw/</p>"
+    },
+
+    {
+        "subtopic": "greeks-take-action",
+        "topic": "greek-life",
+        "title": "Greeks Take Action",
+        "text":"<p>Greeks Take Action is an RSO that dedicates itself to the prevention of sexual assault and relationship violence, an especially pressing issue on college campuses. They are partnered with the UW Panhellenic Council, UW Sexual Assault and Relationship Violence Activists (SARVA), and the UW Peer Health Educators (PHE). They offer several important resources and comprehensive information about their organization on their page. Information: https://uwifc.com/gta and https://www.instagram.com/greekstakeactionuw/</p>"
+    },
+
+    {
+        "subtopic": "multicultural-fraternities",
+        "topic": "greek-life",
+        "title": "Multicultural Fraternities",
+        "text":"<p>The Multicultural Greek Council states that “there are currently 14 Greek organizations active within MGC that span across Asian and LatinX interests. As the council steadily expands in size, MGC will continue to provide a safe and inclusive space for the expression of diverse opinions and meaningful social relationships.” These organizations offer a space that fosters community and inclusivity for minority students. Their website is especially thorough and provides great information about multicultural organizations at UW. Information: http://www.uwmgc.com/ and https://www.instagram.com/uwmgc/</p>"
+    },
+
+    {
+        "subtopic": "academic-fraternities",
+        "topic": "greek-life",
+        "title": "Academic Fraternities",
+        "text": "<p>There are many academic fraternities at the UW, including business and STEM organizations. However, there is no comprehensive list of academic fraternity organizations beyond those registered on the HUB website. To find more information about study-specific organizations, visit the site below, and use their filtering (eg. Categories > Business > AkPsi). Information: https://huskylink.washington.edu/organizations</p>"
+    },
+
+    {
+        "subtopic": "grade-reporting",
+        "topic": "greek-life",
+        "title": "Grade Reporting",
+        "text": "<p>Grade reports are publicly available, and can be helpful in understanding whether or not a Greek organization fosters academic success. Information: Sorority Grade Reports: https://uwpanhellenic.com/grade-reports and Fraternity Grade Reports: https://uwifc.com/grade-reports</p>"
+    },
+
+    {
+        "subtopic": "greek-conduct",
+        "topic": "greek-life",
+        "title": "Hazing Prevention and Past Conduct Reports",
+        "text": "<p>It is especially important to be aware of a Greek organization’s past behavior, particularly if you are interested in rushing. UW is obligated to provide documentation of disciplinary action and Sam’s law violations that have taken place at the university. Information includes: “hazing violations by any student organization, athletic team, or living group. The report will include any violations of the code of conduct, anti-hazing policies, or state or federal laws relating to hazing or offenses related to alcohol, drugs, sexual assault, or physical assault.” This information can be found below. Information: https://www.washington.edu/hazingprevention/hazing-prevention/compliance-report/</p>"
+    },
+
+    {
+        "subtopic": "hazing-resources",
+        "topic": "greek-life",
+        "title": "Hazing Resources",
+        "text": "<p>The University recently created a new site for the prevention and reporting of Hazing. There are a number of resources available on this site, including hazing education, general information, and campus resources. The site can be found below. Information: https://www.washington.edu/hazingprevention/</p>"
+    },
+
+    {
+        "subtopic": "reporting-hazing",
+        "topic": "greek-life",
+        "title": "Reporting Hazing",
+        "text": "<p>Incidents of hazing or suspected incidents of hazing can be reported below using the incident report form - Information: https://washington-advocate.symplicity.com/public_report/index.php/pid364086?</p>"
     }
 ]
