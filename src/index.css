@@ -36,6 +36,10 @@ nav {
   padding: 10px;
 }
 
+main > div {
+  width: 100%;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -91,4 +95,21 @@ nav {
 
 h1 a {
   text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+  .preview {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 820px) {
+  .preview .col {
+    flex-basis: 33.33%;
+  }
+  .card-title {
+    font-size: 1.2rem;
+  }
 }
