@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'; // Import the bookmark icon
 
 export function Nav() {
 
-    const [ menuClicked, setMenuClicked ] = useState(false)
+    const [menuClicked, setMenuClicked] = useState(false)
 
     function handleClick() {
         if (!menuClicked) {
-        setMenuClicked(true);
+            setMenuClicked(true);
         } else {
             setMenuClicked(false);
-        }}
-    
+        }
+    }
+
     function menuOff() {
         setMenuClicked(false)
     }
@@ -23,8 +26,19 @@ export function Nav() {
                 {/* bookmark component should be implemented here.
                 The icon below is currently not interactive. 
                 Bookmark will also require responsive css based on the nav-menu format. See below. */}
-                <div id="bookmark">
-                    <i className="fas fa-bookmark" aria-label="bookmarks"></i>
+                 {/* Dropdown container */}
+                 <div className="dropdown-container">
+                    <div className="bookmark" onClick={menuOff}>
+                        {/* Bookmark icon */}
+                        <i className="fas fa-bookmark" aria-label="bookmarks"></i>
+                    </div>
+
+                    {/* Dropdown content */}
+                    <div className="dropdown-content">
+                        <NavLink to="page1">Page 1</NavLink>
+                        <NavLink to="page2">Page 2</NavLink>
+                        <NavLink to="page3">Page 3</NavLink>
+                    </div>
                 </div>
 
                 <div className="website-title">
