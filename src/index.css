@@ -153,6 +153,28 @@ h1 a {
   margin-top: 20px;
 }
 
+/* Feedback form */
+.feedback-form {
+  margin-bottom: 20px;
+}
+
+.feedback-form textarea,
+.feedback-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid lavender;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .feedback-form textarea,
+  .feedback-form input[type="submit"] {
+    width: calc(100% - 20px);
+  }
+}
+
 @media (min-width: 768px) {
   .preview {
     display: flex;
@@ -168,3 +190,4 @@ h1 a {
     font-size: 1.2rem;
   }
 }
+

@@ -14,6 +14,16 @@ export function Article( {match} ) {
         <div>
             <h2>{article.title}</h2>
             <p>{article.text}</p>
+
+            <div className="feedback-form">
+                <form id="feedback-form">
+                    <textarea
+                        name="feedback"
+                        placeholder="Any feedback or suggestions?"
+                    ></textarea>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
         </div>
     )
 }

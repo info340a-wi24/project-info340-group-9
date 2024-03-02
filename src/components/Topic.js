@@ -17,7 +17,7 @@ export function Topic(prop) {
     
     /* generates an array of preview cards for each subtopic article */
     let previews = TEXT.map((article) => {if (article.topic == urlParams.topic) {
-        return <Preview content={article} />
+        return <Preview key={article.subtopic} content={article} />
     }})
 
     return (
