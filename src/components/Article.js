@@ -8,7 +8,7 @@ export function Article() {
     Should also implement feedback form at the end of the returned div. Feedback form might have to be implemented as separate component */
 
     const subtopic = useParams().subtopic;
-    let article = TEXT.filter(item => {return item.subtopic == subtopic})[0];
+    let article = TEXT.filter(item => {return item.subtopic === subtopic})[0];
     if (!article) {
         return <div>Article not found.</div>;
     }

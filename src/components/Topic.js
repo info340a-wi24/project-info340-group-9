@@ -35,8 +35,6 @@ export function Topic(prop) {
 
 export function Preview(props) {
 
-    const [isArticle, setIsArticle] = useState(false);
-
     const title = props.content.title;
     let text = props.content.text;
     /* accesses a small snippet of the text */
