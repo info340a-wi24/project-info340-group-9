@@ -21,11 +21,8 @@ function App() {
             <Route path="home" element={<Home />} />
 
             {/* Shows the topic and previews of articles under that topic */}
-            <Route path=":topic" element={<Topic topics={['commuters', 'new-students', 'greek-life']}/>}>
-
-              {/* Needs code - Will show the subtopic article */}
-              <Route path=":subtopic" element={<Article />}/>
-            </Route>
+            <Route path=":topic" element={<Topic topics={['commuters', 'new-students', 'greek-life']}/>} />
+            <Route path=":topic/:subtopic" element={<Article />} />
 
           </Routes>
         </div>

@@ -7,15 +7,18 @@ export function Article() {
     Check src/articles/articlecontent.json to see the format. 
     Should also implement feedback form at the end of the returned div. Feedback form might have to be implemented as separate component */
 
-    let {subtopic} = useParams();
-    let article = TEXT.find(item => item.subtopic === subtopic);
+    const subtopic = useParams().subtopic;
+    let article = TEXT.filter(item => {return item.subtopic == subtopic})[0];
     if (!article) {
         return <div>Article not found.</div>;
     }
+
+    const title = () => {return {__html: article.title}};
+    const text = () => {return {__html: article.text}};
     return (
         <div>
-            <h2>{article.title}</h2>
-            <p>{article.text}</p>
+            <h2 dangerouslySetInnerHTML={title()}></h2>
+            <div dangerouslySetInnerHTML={text()}></div>
 
             <div className="feedback-form">
                 <form id="feedback-form">

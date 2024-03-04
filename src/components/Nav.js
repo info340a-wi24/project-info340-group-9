@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'; // Import the bookmark icon
+/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'; // Import the bookmark icon */
 
 export function Nav() {
 
@@ -42,7 +42,7 @@ export function Nav() {
                 </div>
 
                 <div className="website-title">
-                    <h1 className="title"><a href="index.html">UW Wiki</a></h1>
+                    <h1 className="title"><NavLink to="home">UW Wiki</NavLink></h1>
                 </div>
 
                 {/* interactive hamburger menu will display only on mobile
