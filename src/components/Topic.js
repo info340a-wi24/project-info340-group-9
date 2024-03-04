@@ -17,7 +17,7 @@ export function Topic(prop) {
     
     /* generates an array of preview cards for each subtopic article */
     let previews = TEXT.map((article) => {if (article.topic == urlParams.topic) {
-        return <Preview key={article.subtopic} content={article} />
+        return <Preview link={article.subtopic} content={article} />
     }})
 
     return (
@@ -33,12 +33,28 @@ export function Topic(prop) {
     )
 }
 
-function Preview(props) {
+export function Preview(props) {
+
+    const [isArticle, setIsArticle] = useState(false);
 
     const title = props.content.title;
-
+    let text = props.content.text;
     /* accesses a small snippet of the text */
-    const text = props.content.text.slice(0, 80) + "..."
+    if (text.length > 100) {
+        text = text.slice(0, 80) + "..."
+    }
+    
+    function showBookmark() {
+        if (props.content.subtopic) {
+            return <button className="btn bookmark-btn"><i className="fas fa-bookmark" aria-label="bookmarks"></i></button>
+        }
+    }
+
+    function showImg() {
+        if (!props.content.subtopic) {
+            return <img className="card-img-top" src={props.content.img} />
+        }
+    }
 
     /* helps render the text as html (so you can use html notation in the TEXT data file) */
     const textPreview = () => {return {__html: text}};
@@ -47,12 +63,15 @@ function Preview(props) {
             /* needs some more utility classes to make the cards responsive */
             <div className="col col-sm-12 col-md-6">
                 <div className="card m-3">
+                    {showImg()}
                     <div className="card-body">
-                        <h3 className="card-title">{title}</h3>
-                        <p className="card-text" dangerouslySetInnerHTML={textPreview()}></p>
+                        <div className="card-bookmark">
+                            <h3 className="card-title">{title}</h3>
+                            {showBookmark()}
+                        </div>
+                        <div className="card-text" dangerouslySetInnerHTML={textPreview()}></div>
                         {/* 'to' property should be the subtopic URI after we implement the article component */}
-                        <Link className="btn btn-dark" to={`/${props.content.topic}/${props.content.subtopic}`}>More</Link>
-
+                        <Link className="btn btn-dark" to={props.link}>More</Link>
                     </div>
                 </div>
             </div>
