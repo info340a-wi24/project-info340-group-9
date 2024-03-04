@@ -42,7 +42,7 @@ export function Nav() {
                 </div>
 
                 <div className="website-title">
-                    <h1 className="title"><NavLink to="home">UW Wiki</NavLink></h1>
+                    <h1 className="title"><NavLink to="/">UW Wiki</NavLink></h1>
                 </div>
 
                 {/* interactive hamburger menu will display only on mobile

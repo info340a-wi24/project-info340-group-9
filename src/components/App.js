@@ -18,7 +18,7 @@ function App() {
           <Routes>
 
             {/* Needs code - Will welcome users and show previews of the topics */}
-            <Route path="home" element={<Home />} />
+            <Route index element={<Home />} />
 
             {/* Shows the topic and previews of articles under that topic */}
             <Route path=":topic" element={<Topic topics={['commuters', 'new-students', 'greek-life']}/>} />
