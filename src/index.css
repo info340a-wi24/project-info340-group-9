@@ -13,6 +13,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   min-height: 100vh;
+  background-color: #f9f3ff;
 }
 
 #root > div {
@@ -34,6 +35,7 @@ main {
 
 nav {
   padding: 10px;
+  background: rgb(55, 15, 55);
 }
 
 main > div {
@@ -50,19 +52,23 @@ main > div {
   width: 40%;
 }
 
+.website-title h1 a {
+  color:white;
+}
 .nav-links {
   display: none;
 }
 
 #hamburger-menu {
   z-index: 2;
+  color:white;
 }
 
 #side-nav {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: blueviolet;
+  background-color: rgb(55, 15, 55);
   width: 70%;
   height: 100%;
   z-index: 1;
@@ -166,6 +172,38 @@ h1 a {
   border: 1px solid lavender;
   border-radius: 5px;
   box-sizing: border-box;
+}
+
+/*cards*/
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.row {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.card-text {
+  min-height: 100px;
+}
+
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 150px;
+  }
 }
 
 @media (max-width: 768px) {

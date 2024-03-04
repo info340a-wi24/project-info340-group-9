@@ -47,7 +47,6 @@ function Preview(props) {
             /* needs some more utility classes to make the cards responsive */
             <div className="col col-sm-12 col-md-6">
                 <div className="card m-3">
-                    <img className="card-img-top" src="" alt="" />
                     <div className="card-body">
                         <h3 className="card-title">{title}</h3>
                         <p className="card-text" dangerouslySetInnerHTML={textPreview()}></p>
