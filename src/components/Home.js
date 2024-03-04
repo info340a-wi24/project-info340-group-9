@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Preview } from "./Topic"
 
 const cards = [
