@@ -52,7 +52,8 @@ function Preview(props) {
                         <h3 className="card-title">{title}</h3>
                         <p className="card-text" dangerouslySetInnerHTML={textPreview()}></p>
                         {/* 'to' property should be the subtopic URI after we implement the article component */}
-                        <Link className="btn btn-dark" to="home">More</Link>
+                        <Link className="btn btn-dark" to={`/${props.content.topic}/${props.content.subtopic}`}>More</Link>
+
                     </div>
                 </div>
             </div>

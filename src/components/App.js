@@ -5,6 +5,7 @@ import { Home } from './Home';
 import { Topic } from './Topic';
 import { Article } from './Article';
 
+
 function App() {
   return (
     <div>
@@ -23,7 +24,7 @@ function App() {
             <Route path=":topic" element={<Topic topics={['commuters', 'new-students', 'greek-life']}/>}>
 
               {/* Needs code - Will show the subtopic article */}
-              <Route path=":topic/:subtopic" element={<Article />}/>
+              <Route path=":subtopic" element={<Article />}/>
             </Route>
 
           </Routes>
