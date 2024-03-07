@@ -4,7 +4,10 @@ import { Nav } from './Nav';
 import { Home } from './Home';
 import { Topic } from './Topic';
 import { Article } from './Article';
+/* import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
+import { initializeApp } from "firebase/app";
 
+const app = initializeApp(firebaseConfig); */
 
 function App() {
   return (
