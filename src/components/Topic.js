@@ -12,7 +12,7 @@ export function Topic(prop) {
 
     /* if users have a mispelled URI it redirects them to the homepage */
     if (!topics.includes(urlParams.topic)) {
-        return <Navigate to="../home" />
+        return <Navigate to="/" />
     }
     
     /* generates an array of preview cards for each subtopic article */
