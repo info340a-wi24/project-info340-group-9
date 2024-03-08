@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'reactstrap';
 /* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'; // Import the bookmark icon */
 
@@ -51,10 +52,11 @@ export function Nav() {
                 {menuClicked ? (
                     <div id="side-nav">
                         <ul className="nav-links list-unstyled">
-                            <NavLink to="home" onClick={menuOff}>HOME</NavLink>
+                            <NavLink to="/" onClick={menuOff}>HOME</NavLink>
                             <NavLink to="commuters" onClick={menuOff}>COMMUTERS</NavLink>
                             <NavLink to="new-students" onClick={menuOff}>NEW STUDENTS</NavLink>
                             <NavLink to="greek-life" onClick={menuOff}>GREEK LIFE</NavLink>
+                            <NavLink to="login-register" onClick={menuOff}><Button>REGISTER/SIGN UP</Button></NavLink>
                         </ul>
                     </div>
                 ) : (null)}
