@@ -95,8 +95,20 @@ export function Auth() {
     const isNotReadytoSubmit = !isValidEmail(email) || password === '';
 
     return (
+        
         <Container>
+        {user && <Navigate to="/" />}
           {welcomeDiv}
+          {isNewUser ? <FormGroup floating>
+            <Input
+            id="username"
+            name="username"
+            placeholder="Username"
+            value={username}
+            onChange={(event) => handleChange(event)}
+            />
+            <Label>Username</Label>
+      </FormGroup> : (null)}
           <FormGroup floating>
           <Input
               id="email"
@@ -145,7 +157,7 @@ export function Auth() {
             </NavLink>
             </FormGroup>
         )}
-          {errorDiv}
+        {errorDiv}
         </Container>
       );
     }
