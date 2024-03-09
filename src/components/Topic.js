@@ -2,6 +2,21 @@ import React, { useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import TEXT from "../articles/articlecontent.json";
 
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Config';
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from 'firebase/auth';
+
+import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase();
+const userDataRef = ref(db, 'userData');
+
 export function Topic(prop) {
 
     const urlParams = useParams();
@@ -35,6 +50,8 @@ export function Topic(prop) {
 
 export function Preview(props) {
 
+    const [ bookmarkLink, setBookmarkLink ] = useState('');
+
     const title = props.content.title;
     let text = props.content.text;
     /* accesses a small snippet of the text */
@@ -44,7 +61,7 @@ export function Preview(props) {
     
     function showBookmark() {
         if (props.content.subtopic) {
-            return <button className="btn bookmark-btn"><i className="fas fa-bookmark" aria-label="bookmarks"></i></button>
+            return <button className="btn bookmark-btn" onClick={saveBookmark}><i className="fas fa-bookmark" aria-label="bookmarks"></i></button>
         }
     }
 
@@ -53,6 +70,26 @@ export function Preview(props) {
             return <img className="card-img-top" src={props.content.img} />
         }
     }
+
+    
+
+    function saveBookmark() {
+        
+        const currentUser = auth.currentUser.uid;
+        const userRef = ref(userDataRef, currentUser);
+        let bookmarksRef = ref(db, `userData/${currentUser}/bookmarks`)
+    
+        if (currentUser) {
+          const bookmark = {
+            title: title,
+            bookmarkLink: props.link,
+          };
+    
+          push(bookmarksRef, bookmark)
+            /* .then(() => setBookmarkLink('')) */
+            .catch((error) => console.log('Error: ', error));
+      };
+}
 
     /* helps render the text as html (so you can use html notation in the TEXT data file) */
     const textPreview = () => {return {__html: text}};
