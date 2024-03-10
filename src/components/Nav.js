@@ -80,17 +80,15 @@ export function Nav() {
     return (
         <nav>
             <div className="nav-container">
-
                 {/* bookmark component should be implemented here.
                 The icon below is currently not interactive. 
                 Bookmark will also require responsive css based on the nav-menu format. See below. */}
                  {/* Dropdown container */}
-                 <div className="dropdown-container">
-                    <div className="bookmark" onClick={menuOff}>
+                <div className="dropdown-container">
+                    <button aria-label="Bookmarks" className="bookmark" onClick={menuOff}>
                         {/* Bookmark icon */}
-                        <span className="fas fa-bookmark" aria-label="bookmarks"></span>
-                    </div>
-
+                        <span className="fas fa-bookmark"></span>
+                    </button>
                     {/* Dropdown content */}
                     <div className="dropdown-content">
                         {/* <NavLink to="page1">Page 1</NavLink>
@@ -108,8 +106,9 @@ export function Nav() {
 
                 {/* interactive hamburger menu will display only on mobile
                 but css still needs to be made responsive */}
-                <div id="hamburger-menu" onClick={handleClick}>
-                    <span className="fa fa-bars" aria-label="side-menu"></span></div>
+                <button id="hamburger-menu" aria-label="Side menu" onClick={handleClick}>
+                    <span className="fa fa-bars"></span>
+                </button>
                 {menuClicked ? (
                     <div id="side-nav">
                         <ul className="nav-links list-unstyled">
