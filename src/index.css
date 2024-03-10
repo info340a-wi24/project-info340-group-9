@@ -62,9 +62,17 @@ main > div {
   display: none;
 }
 
+/* removed default button styling from hamburger menu */
 #hamburger-menu {
+  background: none;
+  border: none;
+  padding: 0;
   z-index: 2;
   color:white;
+}
+
+#hamburger-menu:hover {
+  color: #734F96; /* Change color on hover */
 }
 
 #side-nav {
@@ -99,13 +107,20 @@ main > div {
 }
 
 /* Add interactivity for bookmark icon */
+.bookmark { 
+  background: none; /* Removing default styling from making bookmark into a button */
+  border: none;
+  padding: 0;
+}
+
 .bookmark .fa-bookmark {
   font-size: 1.5rem;
+  color: white;
   transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .bookmark:hover .fa-bookmark {
-  color: #f4eeee; /* Change color on hover */
+  color: #734F96; /* Change color on hover */
 }
 
 .bookmark:focus .fa-bookmark,

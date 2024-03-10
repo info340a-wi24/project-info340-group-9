@@ -61,13 +61,17 @@ export function Preview(props) {
     
     function showBookmark() {
         if (props.content.subtopic) {
-            return <button className="btn bookmark-btn" onClick={saveBookmark}><i className="fas fa-bookmark" aria-label="bookmarks"></i></button>
+            return (
+            <button className="btn bookmark-btn" aria-label="Save bookmark" onClick={saveBookmark}>
+                <span className="fas fa-bookmark" aria-label="bookmarks"></span>
+            </button>
+            );
         }
     }
 
     function showImg() {
         if (!props.content.subtopic) {
-            return <img className="card-img-top" src={props.content.img} />
+            return <img className="card-img-top" src={props.content.img} alt=""/>
         }
     }
 
@@ -94,7 +98,7 @@ export function Preview(props) {
 
     return (
             /* needs some more utility classes to make the cards responsive */
-            <div className="col col-sm-12 col-md-6">
+            <section className="col col-sm-12 col-md-6">
                 <div className="card m-3">
                     {showImg()}
                     <div className="card-body">
@@ -107,6 +111,6 @@ export function Preview(props) {
                         <Link className="btn btn-dark" to={props.link}>More</Link>
                     </div>
                 </div>
-            </div>
+            </section>
         )}
 
