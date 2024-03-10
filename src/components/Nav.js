@@ -67,7 +67,7 @@ export function Nav() {
                  <div className="dropdown-container">
                     <div className="bookmark" onClick={menuOff}>
                         {/* Bookmark icon */}
-                        <i className="fas fa-bookmark" aria-label="bookmarks"></i>
+                        <span className="fas fa-bookmark" aria-label="bookmarks"></span>
                     </div>
 
                     {/* Dropdown content */}
@@ -84,7 +84,8 @@ export function Nav() {
 
                 {/* interactive hamburger menu will display only on mobile
                 but css still needs to be made responsive */}
-                <div id="hamburger-menu" onClick={handleClick}><i className="fa fa-bars" aria-label="side-menu"></i></div>
+                <div id="hamburger-menu" onClick={handleClick}>
+                    <span className="fa fa-bars" aria-label="side-menu"></span></div>
                 {menuClicked ? (
                     <div id="side-nav">
                         <ul className="nav-links list-unstyled">
