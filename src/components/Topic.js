@@ -32,7 +32,7 @@ export function Topic(prop) {
     
     /* generates an array of preview cards for each subtopic article */
     let previews = TEXT.map((article) => {if (article.topic == urlParams.topic) {
-        return <Preview link={article.subtopic} content={article} />
+        return <Preview link={`/${article.topic}/${article.subtopic}`} content={article} />
     }})
 
     return (
@@ -50,7 +50,7 @@ export function Topic(prop) {
 
 export function Preview(props) {
 
-    const [ bookmarkLink, setBookmarkLink ] = useState('');
+    const [ bookmarkLink, setBookmarkLink ] = useState(false);
 
     const title = props.content.title;
     let text = props.content.text;
@@ -75,21 +75,19 @@ export function Preview(props) {
 
     function saveBookmark() {
         
-        const currentUser = auth.currentUser.uid;
-        const userRef = ref(userDataRef, currentUser);
-        let bookmarksRef = ref(db, `userData/${currentUser}/bookmarks`)
-    
-        if (currentUser) {
-          const bookmark = {
+        if (auth.currentUser) {
+            const currentUser = auth.currentUser.uid;
+            let bookmarksRef = ref(db, `userData/${currentUser}/bookmarks`)
+            const bookmark = {
             title: title,
             bookmarkLink: props.link,
           };
-    
           push(bookmarksRef, bookmark)
-            /* .then(() => setBookmarkLink('')) */
+            .then(() => setBookmarkLink(!bookmarkLink))
             .catch((error) => console.log('Error: ', error));
-      };
-}
+        }
+        
+        }
 
     /* helps render the text as html (so you can use html notation in the TEXT data file) */
     const textPreview = () => {return {__html: text}};

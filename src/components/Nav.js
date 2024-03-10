@@ -6,9 +6,12 @@ import { Button } from 'reactstrap';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase();
 
 export function Nav() {
 
@@ -18,6 +21,7 @@ export function Nav() {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [menuClicked, setMenuClicked] = useState(false);
+    const [bookmarks, setBookmarks] = useState({});
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -32,6 +36,22 @@ export function Nav() {
     
         return () => unsubscribe();
       }, []);
+    
+    useEffect(() => {
+        if (user) {
+            const bookmarksRef = ref(db, `userData/${auth.currentUser.uid}/bookmarks`);
+            const unsub = onValue(bookmarksRef, (snapshot) => {
+            const bookmarksData = snapshot.val();
+            setBookmarks(bookmarksData || {});
+            });
+    
+            // Cleanup function
+            return () => unsub();
+        }}, []);
+    
+    const sortedKeys = Object.keys(bookmarks).sort((a, b) => {
+        return bookmarks[b].timestamp - bookmarks[a].timestamp;
+      });
 
     function handleClick() {
         if (!menuClicked) {
@@ -56,6 +76,7 @@ export function Nav() {
         }
     }
 
+
     return (
         <nav>
             <div className="nav-container">
@@ -72,9 +93,12 @@ export function Nav() {
 
                     {/* Dropdown content */}
                     <div className="dropdown-content">
-                        <NavLink to="page1">Page 1</NavLink>
+                        {/* <NavLink to="page1">Page 1</NavLink>
                         <NavLink to="page2">Page 2</NavLink>
-                        <NavLink to="page3">Page 3</NavLink>
+                        <NavLink to="page3">Page 3</NavLink> */}
+                        {sortedKeys.map((bookmarkId) => (
+                            <NavLink to={bookmarks[bookmarkId].bookmarkLink}>{bookmarks[bookmarkId].title}</NavLink>
+                        ))}
                     </div>
                 </div>
 
