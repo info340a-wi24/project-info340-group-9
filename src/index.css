@@ -1,4 +1,7 @@
-html, body, #root, #root > div {
+html,
+body,
+#root,
+#root>div {
   min-height: 100vh;
 }
 
@@ -8,7 +11,7 @@ body {
   background-color: #f9f3ff;
 }
 
-#root > div {
+#root>div {
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +33,7 @@ nav {
   background: rgb(55, 15, 55);
 }
 
-main > div {
+main>div {
   width: 100%;
 }
 
@@ -68,11 +71,12 @@ main > div {
   border: none;
   padding: 0;
   z-index: 2;
-  color:white;
+  color: white;
 }
 
 #hamburger-menu:hover {
-  color: #734F96; /* Change color on hover */
+  color: #734F96;
+  /* Change color on hover */
 }
 
 #side-nav {
@@ -107,8 +111,9 @@ main > div {
 }
 
 /* Add interactivity for bookmark icon */
-.bookmark { 
-  background: none; /* Removing default styling from making bookmark into a button */
+.bookmark {
+  background: none;
+  /* Removing default styling from making bookmark into a button */
   border: none;
   padding: 0;
 }
@@ -116,16 +121,19 @@ main > div {
 .bookmark .fa-bookmark {
   font-size: 1.5rem;
   color: white;
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  transition: color 0.3s ease;
+  /* Smooth transition for color change */
 }
 
 .bookmark:hover .fa-bookmark {
-  color: #734F96; /* Change color on hover */
+  color: #734F96;
+  /* Change color on hover */
 }
 
 .bookmark:focus .fa-bookmark,
 .bookmark:active .fa-bookmark {
-  color: #333; /* Change color on focus and click */
+  color: #333;
+  /* Change color on focus and click */
 }
 
 /* Dropdown container */
@@ -166,15 +174,15 @@ main > div {
 
 .popup {
   position: absolute;
-  top: calc(100% + 10px); /* Position the pop-up below the bookmark icon */
-  left: 150%;
-  transform: translateX(-50%);
-  background-color: white;
+  width: 200px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: content-box;
+  display: none;
+  /* Hide initially */
   border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  display: none; /* Hide initially */
+  background-color: white;
 }
 
 /* Show the pop-up when necessary */
@@ -220,8 +228,8 @@ main > div {
 }
 
 .row {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-text {
@@ -239,9 +247,9 @@ main > div {
   }
 
   .preview {
-      display: flex;
-      flex-wrap: wrap;
-    }
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 }
 
@@ -249,8 +257,8 @@ main > div {
   .preview .col {
     flex-basis: 33.33%;
   }
+
   .card-title {
     font-size: 1.2rem;
   }
 }
-

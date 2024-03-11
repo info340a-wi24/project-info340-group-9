@@ -1,73 +1,64 @@
 [
     {
-            "subtopic": "parking",
-            "topic": "commuters",
-            "title": "Parking",
-            "text": "<p>Have classes near Red Square? (Kane, Meany, Mary Gates, etc.) The nearest parking garage is Central Plaza Garage. Here you can pay via the PayByPhone app or Cash at the gatehouse. The hours are Weekdays, 4 - 9 p.m., Saturday, 7 a.m. - noon. With rates of $4 an hour or $19.50 daily. There are several parking levels and signs on each wall that direct you to the nearest building.</p><p>Have classes near the engineering buildings? (Lowe, Mechanical Engineering Building, More, etc.) The nearest parking garage is Padelford Garage. Here you pay via the PayByPhone app or pay station. With rates of $4 an hour or $19.50 daily.</p><p>Have classes near Denny Hall or Paccar? The nearest parking lot is N05. This parking is for permit holders but is available via PayByPhone after 4pm. Looking for additional parking? Here's a link to UW Seattle's campus lots. https://transportation.uw.edu/maps/lots-garages</p>"
+        "subtopic": "parking",
+        "topic": "commuters",
+        "title": "Parking",
+        "text": "<p>Have classes near Red Square? (Kane, Meany, Mary Gates, etc.) The nearest parking garage is Central Plaza Garage. Here you can pay via the PayByPhone app or Cash at the gatehouse. The hours are Weekdays, 4 - 9 p.m., Saturday, 7 a.m. - noon. With rates of $4 an hour or $19.50 daily. There are several parking levels and signs on each wall that direct you to the nearest building.</p><p>Have classes near the engineering buildings? (Lowe, Mechanical Engineering Building, More, etc.) The nearest parking garage is Padelford Garage. Here you pay via the PayByPhone app or pay station. With rates of $4 an hour or $19.50 daily.</p><p>Have classes near Denny Hall or Paccar? The nearest parking lot is N05. This parking is for permit holders but is available via PayByPhone after 4pm. Looking for additional parking? Here's a link to UW Seattle's campus lots. https://transportation.uw.edu/maps/lots-garages</p>"
     },
-
     {
         "subtopic": "napping-spots",
         "topic": "commuters",
         "title": "Places to Nap",
-        "text": "<p>Have a big gap in between classes and want to catch a snooze? The bean bags at LSAMP in Mary Gates Hall 311 and the Ethnic Cultural Center's wellness room on the 3rd floor are the places for you.</p>"
+        "text": "<p>Have a big gap in between classes and want to catch a snooze? The bean bags at <a href=\"https://www.washington.edu/omad/louis-stokes-alliance-for-minority-participation/about-uw-lsamp/\">LSAMP</a> in Mary Gates Hall 311 and the <a href=\"http://depts.washington.edu/ecc/spaces/\">Ethnic Cultural Center's</a> wellness room on the 3rd floor are the places for you.</p>"
     },
-
-   {    "subtopic": "study-spots",
+    {
+        "subtopic": "study-spots",
         "topic": "commuters",
         "title": "Places to Study",
-        "text": "<p>Trying to find a place where you can get work done while you wait for your next class? Odegaard library, Suzzalo and Allen libraries, LSAMP, Mary Gates Hall, the HUB Commuter Center, and By George Cafe are the perfect places to. Make reservation for Odegaard and Suzzallo study rooms here: https://cal.lib.uw.edu/reserve/suzzallo-group-study, https://cal.lib.uw.edu/spaces?lid=1454 </p>"
-
+        "text": "<p>Trying to find a place where you can get work done while you wait for your next class? Odegaard library, Suzzalo and Allen libraries, LSAMP, Mary Gates Hall, the HUB Commuter Center, and By George Cafe are the perfect places to.</p><p> Make reservations for <a href=\"https://cal.lib.uw.edu/spaces?lid=1454/\">Odegaard</a> and <a href=\"https://cal.lib.uw.edu/reserve/suzzallo-group-study/\">Suzzallo</a> study rooms via the hyperlinks.</p>"
     },
-
-    {   "subtopic": "overview",
+    {
+        "subtopic": "overview",
         "topic": "greek-life",
         "title": "Overview",
         "text": "<p>With around 4,700 fraternity and sorority members, the UW Greek system has a considerable presence on campus. Whether you're thinking about rushing or just want more information about the traditional, academic, and multicultural Greek organizations at UW, we hope you find our guide helpful. As a note, this resource will not focus on individual houses or house traditions, but rather on campus and organization-wide resources available to all students.</p>"
     },
-
     {
         "subtopic": "greek-advocacy-groups",
         "topic": "greek-life",
         "title": "Greek Advocacy Groups",
         "text": "<p>There are two primary advocacy groups specific to greek life that are listed as UW Registered Student Organizations through the HUB: Greek Pride, and Greeks Take Action.  Greek Pride is an RSO (Registered Student Organization) dedicated to creating a social space for queer fraternity and sorority members. Greek Pride meets weekly and emphasizes service as well as social events. Greek Pride's volunteer activities center around local homelessness and they often volunteer at Seattle shelters and food banks. Greeks Take Action is an RSO that dedicates itself to the prevention of sexual assault and relationship violence, an especially pressing issue on college campuses. They are partnered with the UW Panhellenic Council, UW Sexual Assault and Relationship Violence Activists (SARVA), and the UW Peer Health Educators (PHE). They offer several important resources and comprehensive information about their organization on their page. Links for Greek Pride: https://uwifc.com/greekpride and https://www.instagram.com/greekprideuw/. Links for Greeks Take Action: https://uwifc.com/gta and https://www.instagram.com/greekstakeactionuw/</p>"
     },
-
     {
         "subtopic": "multicultural-fraternities",
         "topic": "greek-life",
         "title": "Multicultural Fraternities",
-        "text":"<p>The Multicultural Greek Council states that “there are currently 14 Greek organizations active within MGC that span across Asian and LatinX interests. As the council steadily expands in size, MGC will continue to provide a safe and inclusive space for the expression of diverse opinions and meaningful social relationships.” These organizations offer a space that fosters community and inclusivity for minority students. Their website is especially thorough and provides great information about multicultural organizations at UW. Information: http://www.uwmgc.com/ and https://www.instagram.com/uwmgc/</p>"
+        "text": "<p>The Multicultural Greek Council states that “there are currently 14 Greek organizations active within MGC that span across Asian and LatinX interests. As the council steadily expands in size, MGC will continue to provide a safe and inclusive space for the expression of diverse opinions and meaningful social relationships.” These organizations offer a space that fosters community and inclusivity for minority students. Their website is especially thorough and provides great information about multicultural organizations at UW. Information: http://www.uwmgc.com/ and https://www.instagram.com/uwmgc/</p>"
     },
-
     {
         "subtopic": "academic-fraternities",
         "topic": "greek-life",
         "title": "Academic Fraternities",
         "text": "<p>There are many academic fraternities at the UW, including business and STEM organizations. However, there is no comprehensive list of academic fraternity organizations beyond those registered on the HUB website. To find more information about study-specific organizations, visit the site below, and use their filtering (eg. Categories > Business > AkPsi). Information: https://huskylink.washington.edu/organizations</p>"
     },
-
     {
         "subtopic": "grade-reporting",
         "topic": "greek-life",
         "title": "Grade Reporting",
         "text": "<p>Grade reports are publicly available, and can be helpful in understanding whether or not a Greek organization fosters academic success. Information: Sorority Grade Reports: https://uwpanhellenic.com/grade-reports and Fraternity Grade Reports: https://uwifc.com/grade-reports</p>"
     },
-
     {
         "subtopic": "hazing-resources",
         "topic": "greek-life",
         "title": "Hazing Resources",
         "text": "<p>Hazing Prevention and Past Hazing Behavior - It is especially important to be aware of a Greek organization’s past behavior, particularly if you are interested in rushing. UW is obligated to provide documentation of disciplinary action and Sam’s law violations that have taken place at the university. Information includes: “hazing violations by any student organization, athletic team, or living group. The report will include any violations of the code of conduct, anti-hazing policies, or state or federal laws relating to hazing or offenses related to alcohol, drugs, sexual assault, or physical assault.” Hazing Resources - The University recently created a new site for the prevention and reporting of Hazing. There are a number of resources available on this site, including hazing education, general information, and campus resources. All incidents of hazing or suspected incidents of hazing should be reported immediately using the hazing report form. Sam’s Law reporting: https://www.washington.edu/hazingprevention/hazing-prevention/compliance-report/. UW Hazing Prevention Site: https://www.washington.edu/hazingprevention/. Report hazing here: https://washington-advocate.symplicity.com/public_report/index.php/pid364086? </p>"
     },
-
     {
         "subtopic": "making-friends",
         "topic": "new-students",
         "title": "Making Friends",
         "text": "<p>One of the things new students struggle with most is overcoming the notorious 'Seattle Freeze'. Even if you're living in on-campus dorms, you can still feel isolated and struggle to make real friendships. Here are a few reasons why:</p><ul><li>People are anxious</li><li>People are busy</li><li>People communicate differently</li><li>And lastly, let's admit it: People don't always want new friends</li></ul><p>However, this doesn't mean making friends is futile. If anything, making time for friends will lead you to worthwhile relationships, better communication skills, and more emotional support while you're at UW. It takes a lot of effort, but as long as you're willing to put yourself out there and be consistent, you'll find your people.</p><p>That being said, making friends at UW, or anywhere, will be largely dependent on you learning how to maintain friendships as an adult. Everyone, including yourself, leads busy lives, so maintaining friendships is about effort and consistency. While it can be scary to reach out, building the habit of checking in with people will go a long way. Joining <a href='https://huskylink.washington.edu/organizations'>RSOs</a> or attending events on campus helps connect you with people that you can see on a regular basis.</p><p>Check out a few and follow them on social media so you can stay up-to-date with campus events. Look out for any organizations in your intended major/dept so you can make friends with current/future classmates.</p>"
     },
-
     {
         "subtopic": "capacity-constrained-majors",
         "topic": "new-students",
