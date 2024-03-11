@@ -33,7 +33,9 @@ export function Home() {
         <div>
             <h1>Welcome to UW Wiki!</h1>
             <p>This is your student-authored survival guide to UW Seattle - by students and for students.</p>
+            <section>
             {topicPreviews}
+            </section>
         </div>
     )
 }

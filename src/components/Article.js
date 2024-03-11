@@ -22,10 +22,14 @@ export function Article() {
 
             <div className="feedback-form">
                 <form id="feedback-form">
-                    <textarea
-                        name="feedback"
-                        placeholder="Any feedback or suggestions?"
-                    ></textarea>
+                    <div className="form-group">
+                        <label htmlFor="feedback">Any feedback or suggestions?</label>
+                        <textarea
+                            id="feedback"
+                            name="feedback"
+                            placeholder="Any feedback or suggestions?"
+                        ></textarea>
+                    </div>
                     <input type="submit" value="Submit" />
                 </form>
             </div>

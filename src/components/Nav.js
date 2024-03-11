@@ -122,7 +122,7 @@ export function Nav() {
                         <ul className="nav-links list-unstyled">
                             {user ? <li><h2>Welcome, {username}</h2></li> : (null)}
                             <NavLink to="/" onClick={menuOff}>HOME</NavLink>
-                            <NavLink tSo="commuters" onClick={menuOff}>COMMUTERS</NavLink>
+                            <NavLink to="commuters" onClick={menuOff}>COMMUTERS</NavLink>
                             <NavLink to="new-students" onClick={menuOff}>NEW STUDENTS</NavLink>
                             <NavLink to="greek-life" onClick={menuOff}>GREEK LIFE</NavLink>
                             <NavLink to="login-register" onClick={menuOff}>{user ? <Button onClick={handleSignOut}>LOG OUT</Button> : <Button>REGISTER/SIGN UP</Button>}</NavLink>
