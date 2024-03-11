@@ -27,17 +27,10 @@
     },
 
     {
-        "subtopic": "greek-pride",
+        "subtopic": "greek-advocacy-groups",
         "topic": "greek-life",
-        "title": "Greek Pride",
-        "text": "<p>Greek Pride is an RSO (Registered Student Organization) dedicated to creating a social space for queer fraternity and sorority members. Greek Pride meets weekly and emphasizes service as well as social events. Greek Pride's volunteer activities center around local homelessness and they often volunteer at Seattle shelters and food banks. Information: https://uwifc.com/greekpride and https://www.instagram.com/greekprideuw/</p>"
-    },
-
-    {
-        "subtopic": "greeks-take-action",
-        "topic": "greek-life",
-        "title": "Greeks Take Action",
-        "text":"<p>Greeks Take Action is an RSO that dedicates itself to the prevention of sexual assault and relationship violence, an especially pressing issue on college campuses. They are partnered with the UW Panhellenic Council, UW Sexual Assault and Relationship Violence Activists (SARVA), and the UW Peer Health Educators (PHE). They offer several important resources and comprehensive information about their organization on their page. Information: https://uwifc.com/gta and https://www.instagram.com/greekstakeactionuw/</p>"
+        "title": "Greek Advocacy Groups",
+        "text": "<p>There are two primary advocacy groups specific to greek life that are listed as UW Registered Student Organizations through the HUB: Greek Pride, and Greeks Take Action.  Greek Pride is an RSO (Registered Student Organization) dedicated to creating a social space for queer fraternity and sorority members. Greek Pride meets weekly and emphasizes service as well as social events. Greek Pride's volunteer activities center around local homelessness and they often volunteer at Seattle shelters and food banks. Greeks Take Action is an RSO that dedicates itself to the prevention of sexual assault and relationship violence, an especially pressing issue on college campuses. They are partnered with the UW Panhellenic Council, UW Sexual Assault and Relationship Violence Activists (SARVA), and the UW Peer Health Educators (PHE). They offer several important resources and comprehensive information about their organization on their page. Links for Greek Pride: https://uwifc.com/greekpride and https://www.instagram.com/greekprideuw/. Links for Greeks Take Action: https://uwifc.com/gta and https://www.instagram.com/greekstakeactionuw/</p>"
     },
 
     {
@@ -62,24 +55,10 @@
     },
 
     {
-        "subtopic": "greek-conduct",
-        "topic": "greek-life",
-        "title": "Hazing Prevention and Past Conduct Reports",
-        "text": "<p>It is especially important to be aware of a Greek organization's past behavior, particularly if you are interested in rushing. UW is obligated to provide documentation of disciplinary action and Sam's law violations that have taken place at the university. Information includes: “hazing violations by any student organization, athletic team, or living group. The report will include any violations of the code of conduct, anti-hazing policies, or state or federal laws relating to hazing or offenses related to alcohol, drugs, sexual assault, or physical assault.” This information can be found below. Information: https://www.washington.edu/hazingprevention/hazing-prevention/compliance-report/</p>"
-    },
-
-    {
         "subtopic": "hazing-resources",
         "topic": "greek-life",
         "title": "Hazing Resources",
-        "text": "<p>The University recently created a new site for the prevention and reporting of Hazing. There are a number of resources available on this site, including hazing education, general information, and campus resources. The site can be found below. Information: https://www.washington.edu/hazingprevention/</p>"
-    },
-
-    {
-        "subtopic": "reporting-hazing",
-        "topic": "greek-life",
-        "title": "Reporting Hazing",
-        "text": "<p>Incidents of hazing or suspected incidents of hazing can be reported below using the incident report form - Information: https://washington-advocate.symplicity.com/public_report/index.php/pid364086?</p>"
+        "text": "<p>Hazing Prevention and Past Hazing Behavior - It is especially important to be aware of a Greek organization’s past behavior, particularly if you are interested in rushing. UW is obligated to provide documentation of disciplinary action and Sam’s law violations that have taken place at the university. Information includes: “hazing violations by any student organization, athletic team, or living group. The report will include any violations of the code of conduct, anti-hazing policies, or state or federal laws relating to hazing or offenses related to alcohol, drugs, sexual assault, or physical assault.” Hazing Resources - The University recently created a new site for the prevention and reporting of Hazing. There are a number of resources available on this site, including hazing education, general information, and campus resources. All incidents of hazing or suspected incidents of hazing should be reported immediately using the hazing report form. Sam’s Law reporting: https://www.washington.edu/hazingprevention/hazing-prevention/compliance-report/. UW Hazing Prevention Site: https://www.washington.edu/hazingprevention/. Report hazing here: https://washington-advocate.symplicity.com/public_report/index.php/pid364086? </p>"
     },
 
     {
