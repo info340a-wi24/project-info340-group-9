@@ -164,6 +164,24 @@ main > div {
   background-color: #ddd;
 }
 
+.popup {
+  position: absolute;
+  top: calc(100% + 10px); /* Position the pop-up below the bookmark icon */
+  left: 150%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none; /* Hide initially */
+}
+
+/* Show the pop-up when necessary */
+.popup.show {
+  display: block;
+}
+
 /* Adjust the top margin to align with the bookmark icon */
 .dropdown-content {
   margin-top: 20px;
