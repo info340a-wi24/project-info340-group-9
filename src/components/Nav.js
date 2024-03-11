@@ -22,36 +22,46 @@ export function Nav() {
     const [errorMessage, setErrorMessage] = useState('');
     const [menuClicked, setMenuClicked] = useState(false);
     const [bookmarks, setBookmarks] = useState({});
+    const [showPopup, setShowPopup] = useState(false); // State for controlling pop-up visibility
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-          if (firebaseUser) {
-            setUser(firebaseUser);
-            setUsername(firebaseUser.displayName);
-            console.log(firebaseUser.displayName);
-          } else {
-            setUser(null);
-          }
+            if (firebaseUser) {
+                setUser(firebaseUser);
+                setUsername(firebaseUser.displayName);
+                console.log(firebaseUser.displayName);
+            } else {
+                setUser(null);
+            }
         });
-    
+
         return () => unsubscribe();
-      }, []);
-    
+    }, []);
+
     useEffect(() => {
         if (user) {
             const bookmarksRef = ref(db, `userData/${auth.currentUser.uid}/bookmarks`);
             const unsub = onValue(bookmarksRef, (snapshot) => {
-            const bookmarksData = snapshot.val();
-            setBookmarks(bookmarksData || {});
+                const bookmarksData = snapshot.val();
+                setBookmarks(bookmarksData || {});
             });
-    
+
             // Cleanup function
             return () => unsub();
-        }}, []);
-    
+        }
+    }, []);
+
     const sortedKeys = Object.keys(bookmarks).sort((a, b) => {
         return bookmarks[b].timestamp - bookmarks[a].timestamp;
-      });
+    });
+
+    const handleBookmarkClick = () => {
+        if (!user) {
+            setShowPopup(true);
+        } else {
+            // Handle bookmark logic
+        }
+    };
 
     function handleClick() {
         if (!menuClicked) {
@@ -80,22 +90,20 @@ export function Nav() {
     return (
         <nav>
             <div className="nav-container">
-                {/* bookmark component should be implemented here.
-                The icon below is currently not interactive. 
-                Bookmark will also require responsive css based on the nav-menu format. See below. */}
-                 {/* Dropdown container */}
+                {/* Bookmark component */}
                 <div className="dropdown-container">
-                    <button aria-label="Bookmarks" className="bookmark" onClick={menuOff}>
-                        {/* Bookmark icon */}
+                    <button aria-label="Bookmarks" className="bookmark" onClick={handleBookmarkClick}>
                         <span className="fas fa-bookmark"></span>
                     </button>
-                    {/* Dropdown content */}
+                    {/* Pop-up message */}
+                    <div className={`popup ${showPopup ? 'show' : ''}`}>
+                        <p>Please sign-in to use the bookmark feature</p>
+                        <button onClick={() => setShowPopup(false)}>Close</button>
+                    </div>
                     <div className="dropdown-content">
-                        {/* <NavLink to="page1">Page 1</NavLink>
-                        <NavLink to="page2">Page 2</NavLink>
-                        <NavLink to="page3">Page 3</NavLink> */}
                         {sortedKeys.map((bookmarkId) => (
-                            <NavLink to={bookmarks[bookmarkId].bookmarkLink}>{bookmarks[bookmarkId].title}</NavLink>
+                            <NavLink key={bookmarkId} to={bookmarks[bookmarkId].bookmarkLink}>
+                                {bookmarks[bookmarkId].title}</NavLink>
                         ))}
                     </div>
                 </div>
