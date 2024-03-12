@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import TEXT from "../articles/articlecontent.json";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
 import {
@@ -10,17 +10,17 @@ import {
   signOut
 } from 'firebase/auth';
 
-import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
+import { getDatabase, ref, onValue, push, runTransaction, update } from 'firebase/database';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase();
 const userDataRef = ref(db, 'userData');
 
-export function Topic(prop) {
+export function Topic(props) {
 
     const urlParams = useParams();
-    const topics = prop.topics;
+    const topics = props.topics;
 
     /* Still needs some editing but this formats the text for the heading on the topic page */
     const pageHeading = urlParams.topic[0].toUpperCase() + urlParams.topic.slice(1);
@@ -32,25 +32,54 @@ export function Topic(prop) {
     
     /* generates an array of preview cards for each subtopic article */
     let previews = TEXT.map((article) => {if (article.topic == urlParams.topic) {
-        return <Preview link={`/${article.topic}/${article.subtopic}`} content={article} />
+        return <Preview key={article.subtopic} link={`/${article.topic}/${article.subtopic}`} content={article} bookmarkCallback={props.callback} />
     }})
 
     return (
-        <>
-            <h1>
-                {pageHeading}
-            </h1>
-            <p>short description of the page's purpose?</p>
-            <div className="preview">
+        <section>
+            <header>
+               <h1>
+                    {pageHeading}
+                </h1> 
+                <p>short description of the page's purpose?</p>
+            </header>
+            <main>
                 {previews}
-            </div>
-        </>
+            </main>
+        </section>
     )
 }
 
 export function Preview(props) {
 
     const [ bookmarkLink, setBookmarkLink ] = useState(false);
+    const [bookmarkExists, setBookmarkExists] = useState(false);
+    const [onHomepage, setOnHomepage] = useState(null);
+    const [bookmarkData, setBookmarkData] = useState({});
+    let subtopic = props.content.subtopic;
+    /* let bookmarkRef = ref(db, `userData/${auth.currentUser.uid}/bookmarks/${props.content.subtopic}`) */
+
+    let bookmarkButton = <button className={`btn bookmark-btn ${bookmarkExists ? 'bookmarked' : 'not-bookmarked'}`} aria-label="Save bookmark" onClick={saveBookmark}>
+    <span className="fas fa-bookmark" aria-label="bookmarks"></span>
+</button>
+
+    useEffect(() => {
+        
+        const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+            if (firebaseUser) {
+              const bookmarksRef = ref(db, `userData/${firebaseUser.uid}/bookmarks`);
+              onValue(bookmarksRef, (snapshot) => {
+                  const bookmarksData = snapshot.val();
+                  setBookmarkData(bookmarksData || {});
+                  setBookmarkExists(Object.keys(bookmarksData).includes(subtopic));
+                }
+              );
+            } else {
+        
+            }
+          });
+          return () => unsubscribe();
+        }, []);
 
     const title = props.content.title;
     let text = props.content.text;
@@ -59,40 +88,19 @@ export function Preview(props) {
         text = text.slice(0, 80) + "..."
     }
     
-    function showBookmark() {
-        if (props.content.subtopic) {
-            return (
-            <button className="btn bookmark-btn" aria-label="Save bookmark" onClick={saveBookmark}>
-                <span className="fas fa-bookmark" aria-label="bookmarks"></span>
-            </button>
-            );
-        }
-    }
+
 
     function showImg() {
-        if (!props.content.subtopic) {
+        if (!subtopic) {
             return <img className="card-img-top" src={props.content.img} alt=""/>
         }
     }
 
-    
 
     function saveBookmark() {
-        
-        if (auth.currentUser) {
-            const currentUser = auth.currentUser.uid;
-            let bookmarksRef = ref(db, `userData/${currentUser}/bookmarks`)
-            const bookmark = {
-            title: title,
-            bookmarkLink: props.link,
-          };
-          push(bookmarksRef, bookmark)
-            .then(() => setBookmarkLink(!bookmarkLink))
-            .catch((error) => console.log('Error: ', error));
-        }
-        
-        }
-
+        props.bookmarkCallback(props.content, props.link, bookmarkExists);
+        setBookmarkExists(!bookmarkExists);
+    }
     /* helps render the text as html (so you can use html notation in the TEXT data file) */
     const textPreview = () => {return {__html: text}};
 
@@ -102,13 +110,13 @@ export function Preview(props) {
                 <div className="card m-3">
                     {showImg()}
                     <div className="card-body">
-                        <div className="card-bookmark">
-                            <h3 className="card-title">{title}</h3>
-                            {showBookmark()}
+                        <div className="card-body-header">
+                            <h2 className="card-title">{title}</h2>
+                            {!!subtopic ? bookmarkButton : (null)}
                         </div>
                         <div className="card-text" dangerouslySetInnerHTML={textPreview()}></div>
                         {/* 'to' property should be the subtopic URI after we implement the article component */}
-                        <Link className="btn btn-dark" to={props.link}>More</Link>
+                        <Link id="read-more" className="btn" to={props.link}>More <span className="fa fa-arrow-right"></span></Link>
                     </div>
                 </div>
             </section>

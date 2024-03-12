@@ -30,12 +30,16 @@ export function Home() {
     })
     
     return (
-        <div>
+        <section>
+          <header>
             <h1>Welcome to UW Wiki!</h1>
-            <p>This is your student-authored survival guide to UW Seattle - by students and for students.</p>
-            <section>
+            <p>This is your student-authored survival guide to UW Seattle - <em>by students and for students.</em></p>
+          </header>
+          <main>
+            <div className="article-previews">
             {topicPreviews}
-            </section>
-        </div>
+            </div>
+          </main>
+        </section>
     )
 }

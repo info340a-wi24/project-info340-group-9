@@ -16,11 +16,15 @@ export function Article() {
     const title = () => {return {__html: article.title}};
     const text = () => {return {__html: article.text}};
     return (
-        <div>
-            <h2 dangerouslySetInnerHTML={title()}></h2>
-            <div dangerouslySetInnerHTML={text()}></div>
-
-            <div className="feedback-form">
+        <section>
+            <header>
+                <h1 dangerouslySetInnerHTML={title()}></h1>
+            </header>
+            <main>
+                <div dangerouslySetInnerHTML={text()}></div>
+            </main>
+            <footer>
+                <div className="feedback-form">
                 <form id="feedback-form">
                     <div className="form-group">
                         <label htmlFor="feedback">Any feedback or suggestions?</label>
@@ -33,6 +37,7 @@ export function Article() {
                     <input type="submit" value="Submit" />
                 </form>
             </div>
-        </div>
+            </footer>
+        </section>
     )
 }
