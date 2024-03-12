@@ -1,25 +1,176 @@
 html,
 body,
 #root,
-#root>div {
+.app {
   min-height: 100vh;
+  background-color: #d8bdbd;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
   margin: 0;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: #f9f3ff;
 }
 
-#root>div {
+.app {
   display: flex;
   flex-direction: column;
 }
+
+/* header */
 
 header {
   min-height: 60px;
 }
 
+  nav {
+    padding: 10px;
+    background: rgb(55, 15, 55);
+  }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
+
+      #bookmarks {
+        position: relative;
+        display: inline-block;
+        padding: 0;
+      }
+
+        .bookmark-button {
+          /* remove default styling */
+          background: none;
+          border: none;
+          z-index: 2;
+        }
+  
+          .nav-fa {
+            font-size: 1.5rem;
+            color: white;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+            /* Smooth transition for color change */
+          }
+        
+          .nav-fa:hover {
+            color: #734F96;
+            /* Change color on hover */
+          }
+        
+          .nav-fa:focus,
+          .nav-fa:active {
+            color: #333;
+            /* Change color on focus and click */
+          }
+    
+        .bookmark-content {
+          position: fixed;
+          z-index: 1;
+        }
+
+          #signin-popup, #bookmarks-list {
+            width: 50%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-sizing: content-box;
+            display: block;
+            border: 1px solid #ccc;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+          }
+          
+            #signin-popup p {
+              color: black;
+            }
+
+            /* Dropdown link styles */
+            #bookmarks-list a {
+              color: black;
+              padding: 10px;
+              text-decoration: none;
+              display: block;
+            }
+            
+              /* Hover effect for dropdown links */
+              #bookmarks-list a:hover {
+                background-color: #ddd;
+              }
+
+      #website-title {
+        margin: auto;
+        width: 40%;
+      }
+
+        #website-title h1 {
+          text-align: center;
+        }
+      
+        #website-title a {
+          text-decoration: none;
+          color: white;
+        }
+
+      #side-menu-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        z-index: 2;
+        color: white;
+      }
+
+      #side-menu-btn:hover {
+        color: #734F96;
+        display: show;
+        /* Change color on hover */
+      }
+
+        .fa-bars:active, .fa-bars:focus {
+          color: white;
+        }
+
+      #side-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: rgb(55, 15, 55);
+        width: 60%;
+        height: 100%;
+        z-index: 1;
+      }
+
+        #side-nav ul {
+          display: flex;
+          flex-direction: column;
+          padding-top: 100px;
+          padding-left: 20px;
+        }
+
+        #side-nav h2 {
+          color: darkgoldenrod;
+          font-weight: bold;
+          padding: 10px;
+          font-size: 2rem;
+        }
+        
+        #side-nav a {
+          text-decoration: none;
+          padding: 20px;
+          color: aliceblue;
+        }
+
+        /* change color later */
+        #side-nav a:hover {
+          color: rgba(138, 100, 2, 0.695);
+        }
+
+      .nav-links {
+        display: none;
+      }
+
+/* main content on the page */
 main {
   padding-top: 20px;
   flex-grow: 1;
@@ -28,214 +179,96 @@ main {
   justify-content: flex-start;
 }
 
-nav {
-  padding: 10px;
-  background: rgb(55, 15, 55);
-}
+  main > div {
+    width: 100%;
+  }
+    main header h1 {
+      font-size: 4rem;
+      text-align: center;
+      font-weight: bold;
+      color: rgba(138, 100, 2, 0.695);
+    }
 
-main>div {
-  width: 100%;
-}
+    main header p {
+      text-align: center;
+      font-size: 1.5rem;
+      color: rgba(138, 100, 2, 0.695);
+    }
+    /* card styling */
+    .card {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      height: 90%;
+      background-color: #734F96;
+    }
 
-.nav-container {
-  display: flex;
-  align-items: center;
-}
+      .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        opacity: 0.75;
+      }
 
-.website-title {
-  margin: auto;
-  width: 40%;
-}
+      .card-body {
+        flex: 1;
+      }
 
-.website-title h1 {
-  text-align: center;
-}
+        .card-body-header {
+          display: flex;
+          justify-content: space-between;
+        }
 
-.website-title h1 a {
-  text-decoration: none;
-  color: white;
-}
+        .card h2 {
+          font-weight: bold;
+          color: rgba(138, 100, 2, 0.695);
+        }
 
-.card-bookmark {
-  display: flex;
-  justify-content: space-between;
-}
+        .card-text {
+          min-height: 100px;
+          font-size: 1.2rem;
+        }
 
-.nav-links {
-  display: none;
-}
+        #read-more {
+          background-color: rgb(55, 15, 55);
+          color: white;
+          margin-right: 0;
+        }
 
-/* removed default button styling from hamburger menu */
-#hamburger-menu {
-  background: none;
-  border: none;
-  padding: 0;
-  z-index: 2;
-  color: white;
-}
+        #read-more:hover, #read-more:focus {
+          background-color: rgb(69, 55, 69);
+          color: gray;
+        }
 
-#hamburger-menu:hover {
-  color: #734F96;
-  /* Change color on hover */
-}
+        .bookmarked .fa-bookmark {
+          color: rgba(138, 100, 2, 0.695);
+        }
 
-#side-nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: rgb(55, 15, 55);
-  width: 70%;
-  height: 100%;
-  z-index: 1;
-}
+        .not-bookmarked .fa-bookmark {
+          color: gray;
+        }
 
-.fa-bookmark {
-  font-size: 1.5rem;
-}
 
-.fa-bars {
-  font-size: 1.5rem;
-}
+  /* Feedback form */
+  .feedback-form {
+    margin-bottom: 20px;
+  }
 
-#side-nav ul {
-  display: flex;
-  flex-direction: column;
-  padding-top: 100px;
-  padding-left: 20px;
-}
+  .feedback-form textarea,
+  .feedback-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 
-#side-nav a {
-  text-decoration: none;
-  padding: 20px;
-  color: aliceblue;
-}
-
-/* Add interactivity for bookmark icon */
-.bookmark {
-  background: none;
-  /* Removing default styling from making bookmark into a button */
-  border: none;
-  padding: 0;
-}
-
-.bookmark .fa-bookmark {
-  font-size: 1.5rem;
-  color: white;
-  transition: color 0.3s ease;
-  /* Smooth transition for color change */
-}
-
-.bookmark:hover .fa-bookmark {
-  color: #734F96;
-  /* Change color on hover */
-}
-
-.bookmark:focus .fa-bookmark,
-.bookmark:active .fa-bookmark {
-  color: #333;
-  /* Change color on focus and click */
-}
-
-/* Dropdown container */
-.dropdown-container {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  top: 100%;
-  left: 0;
-}
-
-/* Show dropdown content when container is hovered */
-.dropdown-container:hover .dropdown-content {
-  display: block;
-}
-
-/* Dropdown link styles */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Hover effect for dropdown links */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.popup {
-  position: absolute;
-  width: 200px;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-sizing: content-box;
-  display: none;
-  /* Hide initially */
-  border: 1px solid #ccc;
-  background-color: white;
-}
-
-/* Show the pop-up when necessary */
-.popup.show {
-  display: block;
-}
-
-/* Adjust the top margin to align with the bookmark icon */
-.dropdown-content {
-  margin-top: 20px;
-}
-
-/* Feedback form */
-.feedback-form {
-  margin-bottom: 20px;
-}
-
-.feedback-form textarea,
-.feedback-form input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid lavender;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-/*cards*/
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
-
-.card {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-}
-
-.card-body {
-  flex: 1;
-}
-
-.row {
+/* .row {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
-.card-text {
-  min-height: 100px;
-}
-
+/* medium screens */
 @media (min-width: 768px) {
   .card-img-top {
     height: 150px;
