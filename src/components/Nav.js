@@ -95,7 +95,8 @@ export function Nav(props) {
         } else {
             return (
             <div className="bookmark-content" ref={popupRef} id="signin-popup">
-                <NavLink to="login-register" onClick={() => setBookmarksOpen(false)}>Sign in to view bookmarks</NavLink>
+                <NavLink to="login-register" onClick={() => setBookmarksOpen(false)}>
+                <p>Sign in to view bookmarks</p></NavLink>
                 <button onClick={() => setBookmarksOpen(false)} >Close</button>
             </div>
         )}
