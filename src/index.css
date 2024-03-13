@@ -39,7 +39,6 @@ header {
       }
 
         .bookmark-button {
-          /* remove default styling */
           background: none;
           border: none;
           z-index: 2;
@@ -50,18 +49,15 @@ header {
             color: white;
             transition: color 0.3s ease;
             font-size: 1.5rem;
-            /* Smooth transition for color change */
           }
         
           .nav-fa:hover {
             color: #734F96;
-            /* Change color on hover */
           }
         
           .nav-fa:focus,
           .nav-fa:active {
             color: #333;
-            /* Change color on focus and click */
           }
     
         .bookmark-content {
@@ -86,7 +82,6 @@ header {
               color: black;
             }
 
-            /* Dropdown link styles */
             #bookmarks-list a {
               color: black;
               padding: 10px;
@@ -94,7 +89,6 @@ header {
               display: block;
             }
             
-              /* Hover effect for dropdown links */
               #bookmarks-list a:hover {
                 background-color: #ddd;
               }
@@ -124,7 +118,6 @@ header {
       #side-menu-btn:hover {
         color: #734F96;
         display: show;
-        /* Change color on hover */
       }
 
         .fa-bars:active, .fa-bars:focus {
@@ -183,22 +176,32 @@ main {
     width: 100%;
   }
     main header h1 {
-      font-size: 4rem;
+      font-size: 4rem; 
       text-align: center;
       font-weight: bold;
-      color: rgba(138, 100, 2, 0.695);
+      color: rgb(138, 99, 2);
     }
 
     main header p {
       text-align: center;
       font-size: 1.5rem;
-      color: rgba(138, 100, 2, 0.695);
+      color: rgb(138, 99, 2);
     }
     /* card styling */
+  .previews {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
     .card {
-      margin: 30px;
+      margin: 30px auto;
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       height: 90%;
       background-color: #734F96;
     }
@@ -221,6 +224,7 @@ main {
         .card h2 {
           font-weight: bold;
           color: rgba(138, 100, 2, 0.695);
+          height: 3em;
         }
 
         .card-text {
@@ -270,6 +274,7 @@ main {
 
 /* medium screens */
 @media (min-width: 768px) {
+
   .card-img-top {
     height: 150px;
   }
@@ -294,4 +299,13 @@ main {
   .card-title {
     font-size: 1.2rem;
   }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .previews {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }

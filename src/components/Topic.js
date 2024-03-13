@@ -44,7 +44,9 @@ export function Topic(props) {
                 <p>short description of the page's purpose?</p>
             </header>
             <main>
-                {previews}
+                <div className="previews">
+                    {previews}
+                </div>
             </main>
         </section>
     )
@@ -106,6 +108,7 @@ export function Preview(props) {
 
     return (
             /* needs some more utility classes to make the cards responsive */
+        
             <section className="col col-sm-12 col-md-6">
                 <div className="card m-3">
                     {showImg()}
