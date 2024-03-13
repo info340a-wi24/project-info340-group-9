@@ -36,7 +36,7 @@ export function Home() {
             <p>This is your student-authored survival guide to UW Seattle - <em>by students and for students.</em></p>
           </header>
           <main>
-            <div className="article-previews">
+            <div className="previews">
             {topicPreviews}
             </div>
           </main>
