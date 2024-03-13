@@ -1,35 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'; // Import the bookmark icon */
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
-import { getAuth, onAuthStateChanged, signOut, signInWithEmailAndPassword } from 'firebase/auth'
-import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase();
 
-export function Nav(props) {
+export function Nav() {
 
     const [user, setUser] = useState(null);
     const [username, setUsername] = useState('');
     const [bookmarkData, setBookmarkData] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
     const [menuOpen, setMenuOpen] = useState(false);
-    const [bookmarkClicked, setBookmarkClicked] = useState(false);
-    const [offBookmark, setOffBookmark] = useState(null);
     const [bookmarksOpen, setBookmarksOpen] = useState(false); // State for controlling pop-up visibility
     const menuRef = useRef();
     const menubtnRef = useRef();
     const bookmarkRef = useRef();
     const bookmarkbtnRef = useRef();
-    const sortedKeys = Object.keys(bookmarkData)/* .sort((a, b) => {
-        return bookmarkData[b].timestamp - bookmarkData[a].timestamp;
-    }); */
+    const sortedKeys = Object.keys(bookmarkData)
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -147,8 +141,6 @@ export function Nav(props) {
                     <h1 className="title"><NavLink to="/">UW Wiki</NavLink></h1>
                 </div>
 
-                {/* interactive hamburger menu will display only on mobile
-                but css still needs to be made responsive */}
                 <button
                 id="side-menu-btn"
                 aria-label="Side menu"
@@ -169,8 +161,7 @@ export function Nav(props) {
                     </div>
                 )}
 
-                {/* Nav links will be arranged as a bar for larger screen.
-                Currently does not display because css is not responsive yet*/}
+
                 <div className="nav-links">
                     <ul>
                         <NavLink to="home">HOME</NavLink>

@@ -26,7 +26,7 @@ export const cards = [
 export function Home() {
 
     let topicPreviews =cards.map((card) => {
-        return <Preview link={card.link} content={card} img={card.img} />
+        return <Preview key={card.link} link={card.link} content={card} img={card.img} />
     })
     
     return (
