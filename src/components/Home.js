@@ -1,7 +1,7 @@
 import React from "react";
 import { Preview } from "./Topic"
 
-const cards = [
+export const cards = [
     {
         title: "Commuters",
         link: "../commuters",
@@ -36,7 +36,7 @@ export function Home() {
             <p>This is your student-authored survival guide to UW Seattle - <em>by students and for students.</em></p>
           </header>
           <main>
-            <div className="previews">
+            <div className="previews d-flex justify-content-between flex-wrap align-content">
             {topicPreviews}
             </div>
           </main>

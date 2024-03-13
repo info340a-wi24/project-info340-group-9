@@ -23,8 +23,10 @@ export function Nav(props) {
     const [bookmarkClicked, setBookmarkClicked] = useState(false);
     const [offBookmark, setOffBookmark] = useState(null);
     const [bookmarksOpen, setBookmarksOpen] = useState(false); // State for controlling pop-up visibility
-    const popupRef = useRef();
-    const btnRef = useRef();
+    const menuRef = useRef();
+    const menubtnRef = useRef();
+    const bookmarkRef = useRef();
+    const bookmarkbtnRef = useRef();
     const sortedKeys = Object.keys(bookmarkData)/* .sort((a, b) => {
         return bookmarkData[b].timestamp - bookmarkData[a].timestamp;
     }); */
@@ -63,14 +65,23 @@ export function Nav(props) {
 
     useEffect(() => {
         const ifClickedOutside = (event) => {
-        if (popupRef.current && !popupRef.current.contains(event.target) && !btnRef.current.contains(event.target)) {
-            setBookmarksOpen(false);
+        if (menuRef.current && !menuRef.current.contains(event.target) && !menubtnRef.current.contains(event.target)) {
             setMenuOpen(false);
         }}
         document.addEventListener("mousedown", ifClickedOutside);
 
         return () => document.removeEventListener("mousedown", ifClickedOutside);
-    }, [bookmarksOpen, menuOpen])
+    }, [menuOpen])
+
+    useEffect(() => {
+        const ifClickedOutside = (event) => {
+        if (bookmarkRef.current && !bookmarkRef.current.contains(event.target) && !bookmarkbtnRef.current.contains(event.target)) {
+            setBookmarksOpen(false);
+        }}
+        document.addEventListener("mousedown", ifClickedOutside);
+
+        return () => document.removeEventListener("mousedown", ifClickedOutside);
+    }, [bookmarksOpen])
 
     function menuOff() {
         setMenuOpen(false);
@@ -79,7 +90,7 @@ export function Nav(props) {
     function renderPopupContent() {
         if (user) {
             return  (
-            <div className="bookmark-content" ref={popupRef} id="bookmarks-list">
+            <div id="bookmarks-list">
                 <ul>
                     {sortedKeys.map((bookmarkID) => (
                 <NavLink 
@@ -94,7 +105,7 @@ export function Nav(props) {
             
         } else {
             return (
-            <div className="bookmark-content" ref={popupRef} id="signin-popup">
+            <div id="signin-popup">
                 <NavLink to="login-register" onClick={() => setBookmarksOpen(false)}>
                 <p>Sign in to view bookmarks</p></NavLink>
                 <button onClick={() => setBookmarksOpen(false)} >Close</button>
@@ -108,7 +119,6 @@ export function Nav(props) {
             await signOut(auth);
             setUsername('');
             setBookmarkData({});
-            setBookmarksOpen(false);
         } catch (error) {
             setErrorMessage(error.message);
         }
@@ -121,13 +131,16 @@ export function Nav(props) {
                 {/* Bookmark component */}
                 <div id="bookmarks">
                     <button
-                        ref={btnRef}
+                        ref={bookmarkbtnRef}
                         aria-label="Bookmarks"
                         className="bookmark-button"
                         onClick={() => setBookmarksOpen(!bookmarksOpen)}>
                             <span className="fa fa-bookmark nav-fa"></span>
                     </button>
-                    {bookmarksOpen && renderPopupContent()} 
+                    <div className="bookmark-content" ref={bookmarkRef}>
+                        {bookmarksOpen && renderPopupContent()} 
+                    </div>
+                    
                 </div>
 
                 <div id="website-title">
@@ -139,12 +152,12 @@ export function Nav(props) {
                 <button
                 id="side-menu-btn"
                 aria-label="Side menu"
-                ref={btnRef}
+                ref={menubtnRef}
                 onClick={() => setMenuOpen(!menuOpen)}>
                     <span className="fa fa-bars nav-fa"></span>
                 </button>
                 {menuOpen && (
-                    <div id="side-nav" ref={popupRef}>
+                    <div id="side-nav" ref={menuRef}>
                         <ul className="side-links list-unstyled">
                             {user && <li><h2>Welcome, {username}</h2></li>}
                             <NavLink to="/" onClick={menuOff}>HOME</NavLink>
